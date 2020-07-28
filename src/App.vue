@@ -1,14 +1,24 @@
 <template>
   <div id="app">
-    <MParent></MParent>
+    <!-- <MParent></MParent> -->
+    this is app
+    <br />
+    <router-link to="/home">go home</router-link>
+    <router-view></router-view>
+    <button @click="toHome"></button>
   </div>
 </template>
 
 <script>
-import MParent from './views/Parent'
+// import MParent from './views/Parent'
 
 export default {
-  components: { MParent },
+  // components: { MParent },
+  methods: {
+    toHome () {
+      this.$router.push({ path: '/home', query: { name: '张三}' } })
+    }
+  }
 }
 </script>
 
